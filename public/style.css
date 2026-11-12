@@ -1,0 +1,218 @@
+:root{color-scheme:light;--bg:#f3f7fc;--bg2:#f7faff;--card:#fff;--ink:#0f2a4a;--head:#0b2d57;--acc:#1e88ff;--mute:#5d6e86;--line:#dbe5f1;--top:#fff;
+ --hero1:#e3efff;--hero2:#f7fbff;--tt:#eaf3ff;--ttact:#fff;--ttc:#1e7bf0;--btn:#1e7bf0;--btnt:#fff;--red:#d62f4f;--sh:0 10px 24px -14px rgba(20,60,120,.4);--inp:#f7faff;--road:#d3e4fb;--roadline:#fff}
+[data-theme=dark]{color-scheme:dark;--bg:#07142a;--bg2:#091a33;--card:#0f2543;--ink:#e6eefb;--head:#fff;--acc:#2aa8ff;--mute:#8fa5c4;--line:#1b3a63;--top:#0a1b34;
+ --hero1:#0a1a33;--hero2:#081730;--tt:#0f2747;--ttact:#1d78f2;--ttc:#fff;--btn:#2d8cff;--red:#ff7a93;--sh:0 10px 24px -14px rgba(0,0,0,.8);--inp:#0a1c36;--road:#143258;--roadline:#2f5f9f}
+*{box-sizing:border-box;margin:0}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;transition:background-color .25s,color .25s}
+h1,h2,h3{color:var(--head);font-weight:800;line-height:1.15}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+
+/* ===== Header ===== */
+.top{position:sticky;top:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px clamp(14px,4vw,48px);background:var(--top);border-bottom:1px solid var(--line);transition:background-color .25s,border-color .25s}
+.brand{display:flex;align-items:center;gap:12px;background:none;border:0;text-align:left;padding:0}
+.lg{position:relative;width:42px;height:42px;flex:none}
+.lg svg,.lg img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.lg.has svg{display:none}
+.bn b{display:block;font-size:.88rem;line-height:1.2;color:var(--head);font-weight:800}
+/* ===== Header: rejim almashtirgich va burger ===== */
+.hr{display:flex;align-items:center;gap:10px}
+.sw{position:relative;width:62px;height:32px;padding:0;border-radius:999px;border:1px solid var(--line);background:var(--tt);transition:background-color .25s,border-color .25s}
+.sw svg{position:absolute;top:6px;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sw .si{left:7px;color:#f59e0b}.sw .mo{right:7px;color:var(--mute)}
+.swk{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(10,40,90,.35);transition:transform .25s}
+[data-theme=dark] .sw{background:#1d4f9f;border-color:#2a64c2}
+[data-theme=dark] .sw .swk{transform:translateX(30px)}
+[data-theme=dark] .sw .si{color:#9fc2f3}[data-theme=dark] .sw .mo{color:#fff}
+.burger{display:none;place-items:center;width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--card)}
+.burger svg{width:20px;height:20px;fill:none;stroke:var(--head);stroke-width:2;stroke-linecap:round}
+.mnav{position:sticky;top:62px;z-index:25;background:var(--top);border-bottom:1px solid var(--line);padding:4px clamp(14px,4vw,48px) 8px}
+.mnav button{display:flex;align-items:center;gap:12px;width:100%;padding:11px 2px;background:none;border:0;border-bottom:1px solid var(--line);text-align:left;font-weight:600;color:var(--head)}
+.mnav button:last-child{border-bottom:0}
+.mnav .ic{width:30px;height:30px}.mnav .ic svg{width:20px;height:20px}
+
+/* ===== Bosh sahifa ===== */
+.home{max-width:1200px;margin:0 auto;padding:22px clamp(14px,4vw,32px) 8px}
+.hero{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(18px,3vw,40px);align-items:center;padding:18px;background:linear-gradient(135deg,var(--card),var(--hero2));border:1px solid var(--line);border-radius:20px;box-shadow:var(--sh);transition:background .25s,border-color .25s}
+.hphoto{border-radius:14px;aspect-ratio:16/10;min-height:230px;width:100%;-webkit-mask-image:linear-gradient(to right,#000 86%,transparent);mask-image:linear-gradient(to right,#000 86%,transparent)}
+.hphoto img{transition:filter .25s}
+[data-theme=dark] .hphoto img{filter:brightness(.62) saturate(.85) contrast(1.05)}
+.kick{display:flex;align-items:center;gap:8px;color:var(--acc);font-size:.82rem;font-weight:700;margin-bottom:10px}
+.kick svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.kick::after{content:"";width:44px;height:2px;background:var(--acc);opacity:.6}
+h1{font-size:clamp(1.4rem,2.7vw,2.15rem);line-height:1.12;font-weight:800;letter-spacing:-.01em}
+h1 .acc{display:block}
+.lead{margin-top:14px;font-size:clamp(.95rem,1.5vw,1.1rem);color:var(--ink);opacity:.85}
+.lead::after{content:"";display:block;width:56px;height:3px;border-radius:2px;background:var(--acc);margin-top:18px}
+
+/* ===== O'quv choragi hisoblagichi ===== */
+.chorak{margin-top:22px;padding:18px;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh);transition:background-color .25s,border-color .25s}
+.chorak h2{font-size:1.05rem;margin-bottom:14px}
+.cd{display:flex;justify-content:center;gap:clamp(8px,2vw,16px)}
+.cdb{display:grid;place-items:center;align-content:center;gap:2px;min-width:clamp(64px,17vw,96px);padding:12px 6px;border:1px solid var(--line);border-radius:14px;background:var(--bg2)}
+.cdb b{font-size:clamp(1.4rem,4vw,2rem);font-weight:800;color:var(--acc);font-variant-numeric:tabular-nums;line-height:1.1}
+.cdb span{font-size:.74rem;color:var(--mute);font-weight:600}
+.cdb input{width:100%;max-width:86px;text-align:center;font-weight:800;font-size:1.25rem;padding:6px 2px}
+.cdbar{justify-content:center;margin:14px 0 0}
+#cd-note{margin-top:10px;font-size:.9rem;min-height:1.3em}
+
+/* ===== Menyu kartochkalari ===== */
+.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}
+.mcard{display:grid;grid-template-columns:48px 1fr;column-gap:14px;row-gap:2px;align-content:center;align-items:center;text-align:left;min-height:78px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);transition:transform .2s,border-color .2s,background-color .25s}
+.mcard:hover{transform:translateY(-3px);border-color:var(--acc)}
+.ic{display:grid;place-items:center;grid-row:span 2;width:46px;height:46px;border-radius:12px;color:var(--acc)}
+[data-theme=dark] .ic{background:rgba(42,168,255,.12);border-radius:50%}
+.ic svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.mcard b{font-size:1rem;font-weight:700;color:var(--head);line-height:1.25;align-self:end}
+.mcard .d{font-size:.8rem;color:var(--mute);line-height:1.35;align-self:start}
+.ar{display:none;color:var(--mute)}
+.ar svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ===== Maktab tarixi: ilon izi yo'l ===== */
+.tarix{margin-top:38px;text-align:center}
+.tarix h2{font-size:clamp(1.4rem,3vw,1.9rem)}
+.tarix>p{color:var(--mute);margin-top:4px}
+.tl{position:relative;display:grid;margin-top:22px;text-align:left}
+.tsvg{position:absolute;inset:0;width:100%;height:100%;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 7%,#000 93%,transparent)}
+.road{fill:none;stroke:var(--road);stroke-width:34;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.dash{fill:none;stroke:var(--roadline);stroke-width:3;stroke-dasharray:10 12;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.trow{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:240px}
+.tcell{display:flex;align-items:center;padding:16px 0}
+.tcell:nth-child(1){justify-content:flex-end;padding-right:clamp(48px,11vw,150px)}
+.tcell:nth-child(2){justify-content:flex-start;padding-left:clamp(48px,11vw,150px)}
+.tcell:nth-child(1) .ttext{text-align:right}
+.tcircle{flex:none;width:clamp(120px,15vw,168px);aspect-ratio:1;border-radius:50%;border:5px solid var(--card);box-shadow:0 0 0 2px var(--acc),0 12px 26px -12px rgba(20,60,120,.55)}
+.ttext{max-width:380px}
+.ttext h3{font-size:1.2rem;margin-bottom:4px}
+.ttext p{font-size:.92rem;color:var(--mute)}
+.tyil{position:absolute;left:50%;transform:translate(-50%,-50%);z-index:2;padding:4px 14px;border-radius:999px;background:var(--acc);color:#fff;font-weight:800;font-size:.9rem;box-shadow:0 4px 12px -4px rgba(20,80,200,.6)}
+
+/* ===== Planshet va telefon ===== */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hphoto{min-height:0;aspect-ratio:16/9;-webkit-mask-image:none;mask-image:none}
+}
+@media(max-width:720px){
+  .burger{display:grid}
+  .bn b{font-size:.8rem}
+  .home{padding-top:14px}
+  .hero{padding:0;background:none;border:0;box-shadow:none}
+  .menu{grid-template-columns:1fr;gap:8px}
+  .mcard{grid-template-columns:40px 1fr 20px;min-height:0;padding:9px 12px;box-shadow:none}
+  .mcard .d{display:none}
+  .mcard b{align-self:center}
+  .ic{grid-row:auto;width:36px;height:36px}.ic svg{width:22px;height:22px}
+  .ar{display:grid}
+  .cdb{min-width:0;flex:1}
+  .tsvg{right:auto;width:48px}
+  .road{stroke-width:22}
+  .trow{grid-template-columns:1fr;row-gap:12px;padding:18px 0 18px 66px;min-height:0}
+  .tcell:nth-child(n){justify-content:flex-start;padding:0}
+  .tcell:nth-child(n) .ttext{text-align:left}
+  .tcell.ci{order:-1}
+  .tyil{left:24px;font-size:.78rem;padding:3px 9px}
+}
+@media(min-width:721px){.mnav{display:none!important}}
+
+.foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:18px clamp(14px,4vw,48px);background:var(--top);border-top:1px solid var(--line);font-size:.78rem;color:var(--mute);transition:background-color .25s}
+.soc{display:flex;gap:10px}
+.soc a{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;color:#fff}
+.soc svg{width:16px;height:16px;fill:currentColor;stroke:currentColor}
+.soc .fb{background:#1877f2}.soc .tg{background:#2aabee}.soc .ig{background:linear-gradient(45deg,#f9a825,#e1306c 55%,#833ab4)}
+
+/* ===== Ichki sahifalar ===== */
+.page{max-width:1120px;margin:0 auto;padding:28px clamp(14px,4vw,32px) 56px}
+.page h2{font-size:clamp(1.7rem,4vw,2.4rem);margin:10px 0 18px}
+.page h3.sub{font-size:1.35rem;margin:34px 0 14px;padding-left:12px;border-left:4px solid var(--acc)}
+.back,.btn{border-radius:10px;font-weight:700;border:1px solid var(--btn)}
+.back{display:inline-flex;background:var(--card);color:var(--head);border:1px solid var(--line);border-radius:999px;padding:8px 18px;font-size:.9rem;margin-bottom:6px}
+.back:hover{border-color:var(--acc)}
+.btn{background:var(--btn);color:var(--btnt);padding:11px 22px}
+.btn:hover{filter:brightness(1.1)}
+.btn.alt{background:var(--card);color:var(--head);border-color:var(--line)}
+.btn.alt:hover{border-color:var(--acc)}
+a.btn{display:inline-block;text-decoration:none;margin:0 8px 12px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--sh);transition:background-color .25s,border-color .25s}
+.card h3{font-size:1.15rem;margin-bottom:6px}
+.card p{margin:3px 0;font-size:.94rem}
+.ph{position:relative;display:grid;place-items:center;background:var(--line);overflow:hidden}
+.ph::before{content:"Rasm";font-size:.8rem;color:var(--mute)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner{width:100%;aspect-ratio:16/6;border-radius:14px;margin-bottom:24px}
+.pic{width:100%;aspect-ratio:4/5;border-radius:12px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.two{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.one{max-width:340px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0}
+.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;font-size:.92rem;transition:border-color .2s,transform .2s}
+.tags li:hover{border-color:var(--acc);transform:translateY(-2px)}
+.tagbtn{display:block;background:none;border:0;padding:7px 18px;font:inherit;color:var(--head);font-weight:600}
+.cap{padding-left:20px}.cap li{margin:4px 0}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.tab{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 20px;font-weight:700}
+.tab.on{background:var(--btn);color:#fff;border-color:var(--btn)}
+.days{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.sc{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.9rem}
+th{font-weight:700;color:var(--mute);font-size:.8rem}
+th,td{text-align:left;padding:6px;border-bottom:1px solid var(--line);white-space:nowrap}
+.form{display:grid;gap:12px;max-width:660px}
+input,textarea{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:10px;font:inherit;background:var(--inp);color:var(--ink)}
+input:focus,textarea:focus{border-color:var(--acc);outline:none}
+#prev{max-width:100%;max-height:260px;border-radius:10px}
+#feed{display:grid;gap:14px;margin-top:22px;max-width:660px}
+.pimg{max-width:100%;border-radius:10px;margin-bottom:10px}
+.post small{display:block;margin:8px 0 12px;color:var(--mute)}
+.err{color:var(--red);font-weight:700;min-height:1.4em}
+.mute{color:var(--mute)}
+.sbtn{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:left;font-weight:700;font-size:1.05rem;color:var(--head);box-shadow:var(--sh);transition:border-color .2s,transform .2s}
+.sbtn:hover{border-color:var(--acc);transform:translateY(-2px)}
+.pdf{display:block;width:100%;height:80vh;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+
+.modal{position:fixed;inset:0;background:rgba(5,14,30,.62);display:grid;place-items:center;padding:16px;z-index:50}
+.modal[hidden]{display:none}
+.box{position:relative;background:var(--card);color:var(--ink);padding:30px 24px 24px;border-radius:16px;border:1px solid var(--line);width:min(480px,100%);max-height:90vh;overflow:auto}
+.box h3{font-size:1.3rem;margin-bottom:16px}
+.x{position:absolute;top:8px;right:12px;background:none;border:0;font-size:1.8rem;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.box iframe{width:100%;height:min(60vh,380px);border:0;border-radius:10px}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.sbtn.has::after{content:"PDF bor";display:block;margin-top:4px;font-size:.72rem;font-weight:700;color:#1f9d57}
+.jgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.jpic{width:100%;aspect-ratio:4/3;border-radius:14px;border:1px solid var(--line)}
+.jbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px}
+.jsticky{position:sticky;top:66px;z-index:5;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line)}
+.days.edit{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+.erow{display:grid;grid-template-columns:1fr 1fr 36px;gap:6px;padding:8px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;background:var(--bg2)}
+.erow .ef{grid-column:1/3}
+.erow .edel{grid-column:3;grid-row:1}
+.erow input[data-f="2"]{grid-column:2/4}
+.edel{background:none;border:1px solid var(--line);border-radius:8px;color:var(--red);font-size:1.3rem;line-height:1;cursor:pointer}
+.brow{display:grid;grid-template-columns:64px 1fr 36px;gap:8px;align-items:center;margin-bottom:8px}
+.ok{color:#1f9d57;font-weight:700;margin-bottom:10px}
+.btn.alt.warn{color:var(--red);border-color:var(--red)}
+.btn[hidden]{display:none}
+.btn:disabled,.tab:disabled{opacity:.45;cursor:not-allowed}
+.cdel,.ecard{position:relative}
+.cx{position:absolute;top:8px;right:8px;z-index:2;width:30px;height:30px;border-radius:50%;border:0;background:var(--red);color:#fff;font-size:1.25rem;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.cx:hover{filter:brightness(1.12)}
+.ecard{display:flex;flex-direction:column;gap:8px}
+.ecard .pic{aspect-ratio:4/3;margin-bottom:0}
+.ephoto{width:100%;padding:8px 12px}
+.fl{display:grid;gap:3px;font-size:.78rem;color:var(--mute);font-weight:600}
+.fl input{font-weight:400;font-size:.95rem;color:var(--ink)}
+.one.edit{max-width:360px}
+.two.edit,.grid.edit{grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}
+.jpic::before{content:"Rasm joyi: " attr(data-p);padding:14px;text-align:center;word-break:break-all;font-size:.85rem;line-height:1.4;color:var(--mute)}
+
+/* ===== Rasm sig'imi ===== */
+/* Rasm ramkaga qanday joylashsin: cover = ramkani to'ldiradi (chetlari qirqilishi mumkin),
+   contain = rasm to'liq ko'rinadi (ramka ichida bo'sh joy qolishi mumkin). Faqat shu ikki qiymatni o'zgartiring: */
+:root{--pic-fit:cover;--hero-fit:cover}
+.pic img{object-fit:var(--pic-fit);object-position:center top}
+.hphoto img{object-fit:var(--hero-fit);object-position:center 25%}
+/* "Maktabdagi joylar" rasmlari: asl nisbatida, qirqilmasdan to'liq ko'rinadi */
+.jgrid{align-items:start}
+.jpic.ok{display:block;aspect-ratio:auto;min-height:0;background:var(--card)}
+.jpic.ok::before{display:none}
+.jpic.ok img{position:static;display:block;width:100%;height:auto;max-height:80vh;object-fit:contain}
